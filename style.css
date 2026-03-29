@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 20px;
+}
+
+body{
+    background: #EFF5F5;
+    color: black;
+    font-family: 'Kanit', sans-serif;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1000px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "header header header"
+                        "contenido contenido derecho"
+                        "abajo1 abajo2 derecho"
+                        "footer footer footer";
+}
+
+.contenedor .header{
+    background: black;
+    color: white;
+    grid-area: header;
+}
+
+.contenedor .contenido{
+    background: #D6E4E5;
+    color: darkslategrey;
+    grid-area: contenido;
+}
+
+.contenedor .derecho{
+    background: #497174;
+    color: aquamarine;
+    grid-area:derecho;
+}
+
+.contenedor .abajo1{
+    background: #EB6440;
+    color: black;
+    height: 100px;
+    grid-area:abajo1;
+}
+
+.contenedor .abajo2{
+    background: #EB6400;
+    color: black;
+    height: 100px;
+    grid-area: abajo2;
+}
+
+.contenedor .footer{
+    background: black;
+    color:  #EB6400;
+    grid-area:footer;
+}
+
+@media screen and (max-width: 760px){
+    .contenedor{
+        grid-template-areas: "header header"
+                            "contenido contenido"
+                            "derecho derecho"
+                            "abajo1 abajo2"
+                            "footer footer";
+    }
+}
+
+@media screen and (max-width: 500px){
+    .contenedor{
+        grid-template-areas: "header "
+                            "contenido "
+                            "derecho "
+                            "abajo1"
+                            "abajo2"
+                            "footer";
+    }
+}
